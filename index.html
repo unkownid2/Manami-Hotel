@@ -130,7 +130,9 @@
     </section>
 
     <script>
-        const phoneNum = "38348434343";
+        // NUMRAT E WHATSAPP
+        const whatsappNum1 = "38344326458"; 
+        const whatsappNum2 = "38348434343"; 
         
         // --- LISTA E FOTOVE ---
         const carPhotos = [
@@ -148,7 +150,7 @@
         ];
 
         // ========================================================================
-        // LISTA E EMRAVE (Mund të ndryshoni këtu)
+        // LISTA E EMRAVE (E VENDOSUR SIPAS KERKESËS)
         // ========================================================================
         const carList = [
             { name: "TIGUAN 2019", desc: "Koha e pushimeve ka filluar Veturat e mirë s fol dy herë" }, 
@@ -172,18 +174,18 @@
             { name: "GOLF 7", desc: "Komoditet dhe Elegancë" }, 
             { name: "GOLF 7", desc: "Elegancë" }, 
             { name: "TIGUAN", desc: "Suv për çdo rrugë" }, 
-            { name: "VW POLO", desc: "Komoditet dhe Elegancë" }, 
+            { name: "VW TIGUAN", desc: "Komoditet dhe Elegancë" }, 
             { name: "VW POLO", desc: "Elegancë" }, 
-            { name: "GOLF 7.5", desc: "Komoditet dhe Elegancë" }, 
-            { name: "SKODA KAMIQ", desc: "për Udhtimët tuaja" }, 
-            { name: "SKODA SCALA", desc: "Komoditet dhe Elegancë" }, 
-            { name: "SKODA KAMIQ", desc: "Elegancë" }, 
+            { name: "VW POLO", desc: "Komoditet dhe Elegancë" }, 
+            { name: "VW GOLF 7.5", desc: "për Udhtimët tuaja" }, 
+            { name: "SKODA KAMIQ", desc: "Komoditet dhe Elegancë" }, 
+            { name: "SKODA SCALA", desc: "Elegancë" }, 
             { name: "AUDI A3", desc: "Komoditet dhe Elegancë" }, 
             { name: "Audi A3", desc: "Qyteti i tij është çdo rrugë" }, 
+            { name: "Audi A3", desc: "Komoditet dhe Elegancë" }, 
             { name: "TOURAN", desc: "7 Ulëse" }, 
-            { name: "TIGUAN", desc: "Suv Komoditet dhe Elegancë" }, 
-            { name: "GOLF 7.5", desc: "Më e mira nga më të mirat" }, 
-            { name: "Audi RS6", desc: "Wagon super i shpejtë" }  
+            { name: "TIGUAN", desc: "Komoditet dhe Elegancë" }, 
+            { name: "GOLF 7.5", desc: "Elegancë" }
         ];
         // ========================================================================
 
@@ -205,22 +207,21 @@
                     <p class="text-[10px] text-blue-400 text-center uppercase tracking-widest font-bold mb-4 h-8 overflow-hidden">${carDesc}</p>
                     
                     <div class="grid grid-cols-2 gap-2 mb-6">
-                        <!-- NDRYSHIM: BENZIN HEQUR, MBETUR VETËM DIESEL -->
                         <div class="text-[9px] bg-white/5 p-2 rounded border border-white/10 text-gray-300 flex items-center gap-2"><i class="fas fa-gas-pump text-blue-500"></i> DIESEL</div>
-                        
-                        <!-- VETURAT JANE AUTOMATIKE -->
                         <div class="text-[9px] bg-white/5 p-2 rounded border border-white/10 text-gray-300 flex items-center gap-2"><i class="fas fa-cog text-blue-500"></i> AUTOMATIK</div>
-                        
                         <div class="text-[9px] bg-white/5 p-2 rounded border border-white/10 text-gray-300 flex items-center gap-2"><i class="fas fa-shield-alt text-blue-500"></i> FULL KASKO</div>
                         <div class="text-[9px] bg-white/5 p-2 rounded border border-white/10 text-gray-300 flex items-center gap-2"><i class="fas fa-headset text-blue-500"></i> 24/7 SUPPORT</div>
                     </div>
 
                     <div class="flex gap-2">
-                        <a href="https://wa.me/${phoneNum}?text=${msg}" target="_blank" class="flex-1 bg-green-600/10 text-green-500 py-3 rounded-xl border border-green-600/30 text-center text-xl hover:bg-green-600 hover:text-white transition">
+                        <!-- WHATSAPP 1: Numri i parë -->
+                        <a href="https://wa.me/${whatsappNum1}?text=${msg}" target="_blank" class="flex-1 bg-green-600/10 text-green-500 py-3 rounded-xl border border-green-600/30 text-center text-xl hover:bg-green-600 hover:text-white transition">
                             <i class="fab fa-whatsapp"></i>
                         </a>
-                        <a href="viber://chat?number=${phoneNum}" target="_blank" class="flex-1 bg-purple-600/10 text-purple-500 py-3 rounded-xl border border-purple-600/30 text-center text-xl hover:bg-purple-600 hover:text-white transition">
-                            <i class="fab fa-viber"></i>
+                        
+                        <!-- WHATSAPP 2: Numri i dytë -->
+                        <a href="https://wa.me/${whatsappNum2}?text=${msg}" target="_blank" class="flex-1 bg-green-600/10 text-green-500 py-3 rounded-xl border border-green-600/30 text-center text-xl hover:bg-green-600 hover:text-white transition">
+                            <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
                 </div>`;
