@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MANAMI RENT A CAR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;500;700&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; background: #000; color: white; margin: 0; overflow-x: hidden; }
+
+        /* --- LOADER --- */
+        #loader { position: fixed; inset: 0; background: #000; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 10000; }
+        .loading-logo-custom { width: 550px; filter: drop-shadow(0 0 15px #ffffff); animation: staticGlow 2s infinite alternate ease-in-out; }
+        @keyframes staticGlow { 0% { filter: drop-shadow(0 0 10px #ffffff); } 100% { filter: drop-shadow(0 0 25px #3b82f6); } }
+
+        /* --- HOME SECTION --- */
+        #home-section {
+            height: 100vh; width: 100%; display: flex; flex-direction: column;
+            justify-content: space-between; align-items: center; position: relative;
+            background: #000; overflow: hidden; padding: 15px 0;
+        }
+
+        .bg-image-fix {
+            position: absolute; inset: 0;
+            background: url('https://i.ibb.co/cKV3vj1F/Gemini-Generated-Image-9lsqpt9lsqpt9lsq-1.png') no-repeat center 45% / contain;
+            z-index: 1;
+        }
+
+        .top-nav { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; z-index: 1000; position: relative; }
+        .nav-logo { width: 140px; }
+
+        @keyframes glow-blue { 0% { color: #fff; } 100% { color: #3b82f6; text-shadow: 0 0 10px #3b82f6; } }
+        @keyframes pulse-gold { 0% { box-shadow: 0 0 0 0px rgba(212, 175, 55, 0.7); } 100% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); } }
+
+        .wb-glow-icon { animation: glow-blue 2s infinite alternate; }
+        
+        .hotel-btn {
+            display: flex; align-items: center; justify-content: center;
+            background: #d4af37; color: #000; border-radius: 50px; font-weight: 900;
+            text-transform: uppercase; animation: pulse-gold 2s infinite; transition: 0.3s;
+        }
+
+        @media (min-width: 768px) {
+            .hotel-btn { padding: 8px 18px; font-size: 11px; gap: 8px; }
+            .nav-logo { width: 180px; }
+        }
+
+        @media (max-width: 767px) {
+            .hotel-btn { width: 42px; height: 42px; font-size: 18px; }
+            .hotel-btn span { display: none; }
+            .nav-logo { width: 115px; }
+        }
+
+        .shimmer-text {
+            font-family: 'Orbitron', sans-serif; font-size: clamp(1.4rem, 6vw, 4rem); font-weight: 900;
+            background: linear-gradient(90deg, #333 0%, #333 45%, #ff0000 50%, #fff 51%, #ff0000 52%, #333 55%, #333 100%);
+            background-size: 300% 100%; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            animation: laser-animation 4s linear infinite; z-index: 10;
+        }
+        @keyframes laser-animation { 0% { background-position: 100% 0%; } 100% { background-position: 0% 0%; } }
+
+        .btn-main { 
+            background: rgba(0,0,0,0.8); color: #fff; border: 1px solid #fff;
+            padding: 12px 40px; border-radius: 5px; font-weight: 800; text-transform: uppercase; 
+            cursor: pointer; transition: 0.3s; z-index: 10; margin-bottom: 30px; font-size: 14px;
+        }
+
+        #catalog-section { display: none; background: #050505; min-height: 100vh; padding: 40px 15px; }
+        .car-card { background: #0f0f0f; border: 1px solid #1a1a1a; border-radius: 20px; padding: 15px; transition: 0.3s; overflow: hidden; }
+        .car-card:hover { border-color: #3b82f6; transform: translateY(-5px); }
+        
+        .car-img-container {
+            width: 100%;
+            height: 200px;
+            background: #151515;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .car-img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: contain;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="loader">
+        <img src="https://i.ibb.co/xSRVzm3q/IMG-5396.png" class="loading-logo-custom">
+    </div>
+
+    <section id="home-section">
+        <div class="bg-image-fix"></div>
+        <div class="top-nav">
+            <div class="flex gap-3 text-lg">
+                <a href="https://www.facebook.com/share/1Drg8Ce6Wr/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f wb-glow-icon"></i></a>
+                <a href="https://www.instagram.com/rentacar.manami?igsh=MXV3NXdvdnc4amg1bQ==" target="_blank"><i class="fab fa-instagram wb-glow-icon"></i></a>
+                <a href="https://www.tiktok.com/@rentacarmanami?_r=1&_t=ZS-93nLL42YqKP" target="_blank"><i class="fab fa-tiktok wb-glow-icon"></i></a>
+            </div>
+            <img src="https://i.ibb.co/rKJ3XR8P/IMG-5398.png" class="nav-logo">
+            <a href="https://impex-car-rental.github.io/HOTEL-IMPEX/" class="hotel-btn">
+                <i class="fas fa-hotel"></i>
+                <span>Hotel</span>
+            </a>
+        </div>
+        <h1 class="shimmer-text">MANAMI-RENT A CAR</h1>
+        <button onclick="openCatalog()" class="btn-main">REZERVO RENTA CAR</button>
+    </section>
+
+    <section id="catalog-section">
+        <div class="container mx-auto">
+            <div class="flex justify-between items-center mb-10 border-b border-gray-800 pb-5">
+                <h2 class="text-xl font-bold font-['Orbitron'] tracking-widest text-white">KATALOGU I MAQINAVE</h2>
+                <button onclick="closeCatalog()" class="bg-white/10 px-4 py-2 rounded-full border border-white/20 text-[10px] text-white uppercase hover:bg-white/20 transition">Mbyll [X]</button>
+            </div>
+            
+            <div id="car-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const phoneNum = "38348434343";
+        
+        // --- LISTA E FOTOVE ---
+        const carPhotos = [
+            "https://i.ibb.co/Gv6hjpQx/IMG-5389.jpg", "https://i.ibb.co/qLx6mV0G/IMG-5388.jpg", "https://i.ibb.co/m5Ldnh2h/IMG-5387.jpg",
+            "https://i.ibb.co/4w3Nk4N2/IMG-5386.jpg", "https://i.ibb.co/pBZP1v1S/IMG-5385.jpg", "https://i.ibb.co/WvcDwjtL/IMG-5384.jpg",
+            "https://i.ibb.co/rf43stHJ/IMG-5383.jpg", "https://i.ibb.co/DfLXTKj8/IMG-5382.jpg", "https://i.ibb.co/21ywSdKJ/IMG-5381.jpg",
+            "https://i.ibb.co/Nhfvxv8/IMG-5380.jpg", "https://i.ibb.co/dsb6sjC3/IMG-5379.jpg", "https://i.ibb.co/gMVBCpN0/IMG-5378.jpg",
+            "https://i.ibb.co/kjqP6KD/IMG-5377.jpg", "https://i.ibb.co/jvHZqKHz/IMG-5376.jpg", "https://i.ibb.co/mVTCrNRb/IMG-5375.jpg",
+            "https://i.ibb.co/M5xL3kDm/IMG-5374.jpg", "https://i.ibb.co/8nSd7nHY/IMG-5373.jpg", "https://i.ibb.co/5hjkwDC5/IMG-5372.jpg",
+            "https://i.ibb.co/ynd4FT9L/IMG-5371.jpg", "https://i.ibb.co/zWcczdsP/IMG-5369.jpg", "https://i.ibb.co/5WxPFTBV/IMG-5368.jpg",
+            "https://i.ibb.co/nMGkmKfz/IMG-5367.jpg", "https://i.ibb.co/wF1g3hxT/IMG-5366.jpg", "https://i.ibb.co/xVJRxjd/IMG-5365.jpg",
+            "https://i.ibb.co/t6wxs6g/IMG-5363.jpg", "https://i.ibb.co/xt9cxLqr/IMG-5361.jpg", "https://i.ibb.co/VYc80YX5/IMG-5360.jpg",
+            "https://i.ibb.co/4gK7khW5/IMG-5359.jpg", "https://i.ibb.co/ktcv6PF/IMG-5358.jpg", "https://i.ibb.co/TMQcM0DZ/IMG-5357.jpg",
+            "https://i.ibb.co/Fqk1234k/IMG-5356.jpg", "https://i.ibb.co/p6drYqTh/IMG-5355.jpg", "https://i.ibb.co/sxvWWpK/IMG-5354.jpg"
+        ];
+
+        // ========================================================================
+        // LISTA E EMRAVE (Mund të ndryshoni këtu)
+        // ========================================================================
+        const carList = [
+            { name: "TIGUAN 2019", desc: "Koha e pushimeve ka filluar Veturat e mirë s fol dy herë" }, 
+            { name: "PASSAT B8 modeli karavan", desc: "Keni shumë valigje?"},
+            { name: "TOURAN 2018", desc: "7 ulëse" }, 
+            { name: "TOURAN 2018", desc: "7 ulëse" }, 
+            { name: "GOLF 7.5", desc: "Super komoditet" }, 
+            { name: "AUDI A3 2018", desc: "Vizitoni vendlindjen" }, 
+            { name: "TOURAN 2018", desc: "7 ulëse" }, 
+            { name: "SEAT ARONA 2022", desc: "Pushimët me makinë 2022" }, 
+            { name: "TIGUAN 2019", desc: "Komoditet dhe elegancë" }, 
+            { name: "GOLF 7 2018", desc: "Udhtimi i radhës" }, 
+            { name: "TOURAN 2018", desc: "7 ulëse" }, 
+            { name: "GOLF 7 2018", desc: "Pushimë me familjë në vendlindje" }, 
+            { name: "PASSAT B8 2018", desc: "Është enkas për juvë që keni disa valigje" }, 
+            { name: "SEAT ARONA 2022", desc: "Pushimët me to" }, 
+            { name: "TIGUAN", desc: "Suv që ofron elegancë" }, 
+            { name: "BMW X1", desc: "Suv me stil modern që ofron elegancë" }, 
+            { name: "AUDI A3", desc: "Komoditet dhe Elegancë" }, 
+            { name: "GOLF 7", desc: "Ju rekomandojmë për Udhtimët tuaja" }, 
+            { name: "GOLF 7", desc: "Komoditet dhe Elegancë" }, 
+            { name: "GOLF 7", desc: "Elegancë" }, 
+            { name: "TIGUAN", desc: "Suv për çdo rrugë" }, 
+            { name: "VW POLO", desc: "Komoditet dhe Elegancë" }, 
+            { name: "VW POLO", desc: "Elegancë" }, 
+            { name: "GOLF 7.5", desc: "Komoditet dhe Elegancë" }, 
+            { name: "SKODA KAMIQ", desc: "për Udhtimët tuaja" }, 
+            { name: "SKODA SCALA", desc: "Komoditet dhe Elegancë" }, 
+            { name: "SKODA KAMIQ", desc: "Elegancë" }, 
+            { name: "AUDI A3", desc: "Komoditet dhe Elegancë" }, 
+            { name: "Audi A3", desc: "Qyteti i tij është çdo rrugë" }, 
+            { name: "TOURAN", desc: "7 Ulëse" }, 
+            { name: "TIGUAN", desc: "Suv Komoditet dhe Elegancë" }, 
+            { name: "GOLF 7.5", desc: "Më e mira nga më të mirat" }, 
+            { name: "Audi RS6", desc: "Wagon super i shpejtë" }  
+        ];
+        // ========================================================================
+
+        const carGrid = document.getElementById('car-grid');
+        
+        carPhotos.forEach((imgUrl, index) => {
+            const data = carList[index] || { name: "MANAMI CAR #" + (index + 1), desc: "Makinë e disponueshme." };
+            const carName = data.name;
+            const carDesc = data.desc;
+            
+            const msg = encodeURIComponent(`Përshëndetje MANAMI, dua të rezervoj makinën: ${carName}`);
+            
+            carGrid.innerHTML += `
+                <div class="car-card animate__animated animate__fadeInUp">
+                    <div class="car-img-container">
+                        <img src="${imgUrl}" class="car-img" alt="${carName}">
+                    </div>
+                    <h3 class="text-lg font-bold text-center text-white mb-1 mt-2">${carName}</h3>
+                    <p class="text-[10px] text-blue-400 text-center uppercase tracking-widest font-bold mb-4 h-8 overflow-hidden">${carDesc}</p>
+                    
+                    <div class="grid grid-cols-2 gap-2 mb-6">
+                        <!-- NDRYSHIM: BENZIN HEQUR, MBETUR VETËM DIESEL -->
+                        <div class="text-[9px] bg-white/5 p-2 rounded border border-white/10 text-gray-300 flex items-center gap-2"><i class="fas fa-gas-pump text-blue-500"></i> DIESEL</div>
+                        
+                        <!-- VETURAT JANE AUTOMATIKE -->
+                        <div class="text-[9px] bg-white/5 p-2 rounded border border-white/10 text-gray-300 flex items-center gap-2"><i class="fas fa-cog text-blue-500"></i> AUTOMATIK</div>
+                        
+                        <div class="text-[9px] bg-white/5 p-2 rounded border border-white/10 text-gray-300 flex items-center gap-2"><i class="fas fa-shield-alt text-blue-500"></i> FULL KASKO</div>
+                        <div class="text-[9px] bg-white/5 p-2 rounded border border-white/10 text-gray-300 flex items-center gap-2"><i class="fas fa-headset text-blue-500"></i> 24/7 SUPPORT</div>
+                    </div>
+
+                    <div class="flex gap-2">
+                        <a href="https://wa.me/${phoneNum}?text=${msg}" target="_blank" class="flex-1 bg-green-600/10 text-green-500 py-3 rounded-xl border border-green-600/30 text-center text-xl hover:bg-green-600 hover:text-white transition">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="viber://chat?number=${phoneNum}" target="_blank" class="flex-1 bg-purple-600/10 text-purple-500 py-3 rounded-xl border border-purple-600/30 text-center text-xl hover:bg-purple-600 hover:text-white transition">
+                            <i class="fab fa-viber"></i>
+                        </a>
+                    </div>
+                </div>`;
+        });
+
+        window.onload = () => setTimeout(() => document.getElementById('loader').style.display = 'none', 1500);
+        function openCatalog() { document.getElementById('home-section').style.display = 'none'; document.getElementById('catalog-section').style.display = 'block'; window.scrollTo(0,0); }
+        function closeCatalog() { document.getElementById('catalog-section').style.display = 'none'; document.getElementById('home-section').style.display = 'flex'; }
+    </script>
+</body>
+</html>
